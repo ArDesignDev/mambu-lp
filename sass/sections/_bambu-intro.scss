@@ -1,0 +1,62 @@
+@use "../base/variables" as *;
+
+.bambu-intro {
+    background-color: $color-primary;
+    padding: 30px 30px 20px 30px;
+    position: relative;
+    z-index: 1;
+    border-radius: $border-radius;
+
+    .bambu-intro-header {
+        display: flex;
+        align-items: center;
+
+        @media (max-width: $bp-medium) {
+            flex-direction: column;
+        }
+
+        .bambu-intro-title,
+        .bambu-intro-img {
+            width: 50%;
+
+            @media (max-width: $bp-medium) {
+                width: 100%;
+            }
+        }
+
+        .bambu-intro-title {
+            padding-right: 20px;
+            padding-bottom: 0;
+
+            @media (max-width: $bp-medium) {
+                padding-right: 0;
+                padding-bottom: 20px;
+            }
+        }
+
+        .bambu-intro-img {
+
+            @media (max-width: $bp-medium) {
+                order: -1;
+            }
+
+            img {
+                max-width: 115%;
+                width: 115%;
+                margin-top: -220px;
+                margin-left: -13%;
+
+                @media (max-width: $bp-medium) {
+                    width: 100%;
+                    max-width: 100%;
+                    margin: -150px 0 0 0;
+                }
+            }
+
+        }
+    }
+
+    p, h2 {
+        color: #fff;
+    }
+}

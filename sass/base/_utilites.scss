@@ -1,0 +1,42 @@
+@use "../base/variables" as *;
+
+.bambu {
+    .bambu-box {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: $border-radius;
+        margin: 1rem 0;
+    
+        h2, strong {
+            color: $color-primary;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+    
+    .bambu-small-text {
+        font-size: 20px;
+        padding-left: 10px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        border-left: 2px solid $color-primary;
+
+        @media (max-width: $bp-largest) {
+            font-size: 18px;
+        }
+
+        @media (max-width: $bp-large) {
+            font-size: 16px;
+        }
+
+        @media (max-width: $bp-small) {
+            font-size: 14px;
+        }
+    }
+
+    .bambu-color-second {
+        color: $color-secondary
+    }
+}

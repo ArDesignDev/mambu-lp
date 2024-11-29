@@ -1,0 +1,91 @@
+@use "../base/variables" as *;
+
+.bambu-coctail {
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+    .bambu-coctail-row {
+        display: flex;
+        align-items: flex-end;
+
+        @media (max-width: $bp-medium) {
+            flex-direction: column;
+        }
+
+        .bambu-coctail-text {
+            width: 70%;
+
+            @media (max-width: $bp-medium) {
+                width: 100%;
+            }
+
+            & > * {
+                max-width: 500px;
+                padding-right: 20px;
+            }
+        }
+
+        .bambu-coctail-img {
+            width: 30%;
+            padding-left: 50px;
+            padding-right: 30px;
+
+            @media (max-width: $bp-medium) {
+                width: 100%;
+                text-align: center;
+                padding: 0;
+            }
+
+            figure {
+                margin-bottom: -110px;
+                position: relative;
+
+                @media (max-width: $bp-medium) {
+                    margin-bottom: -30px;
+                    display: inline-block;
+
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -9px;
+                    left: -83px;
+                    width: 250px;
+                    height: 50px;
+                    background-image: url(https://boldgroup.agency/uploaded/bambu//shadow.png);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+
+                    @media (max-width: $bp-medium) {
+                        display: none;
+                    }
+                }
+
+                img {
+                    position: relative;
+                    z-index: 1;
+
+                    @media (max-width: $bp-medium) {
+                        max-width: 150px;
+                    }
+
+                    @media (max-width: $bp-small) {
+                        max-width: 110px;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .bambu-box {
+        p {
+            max-width: 60%;
+
+            @media (max-width: $bp-medium) {
+                max-width: 100%;
+            }
+        }
+    }
+}

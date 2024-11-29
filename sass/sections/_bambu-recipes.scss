@@ -1,0 +1,46 @@
+@use "../base/variables" as *;
+
+.bambu-recipes {
+
+    .bambu-recipes-row {
+        display: flex;
+        align-items: flex-end;
+        margin-top: 40px;
+
+        @media (max-width: $bp-large) {
+            flex-direction: column;
+        }
+    }
+
+    .bambu-recipes-text {
+        width: 55%;
+
+        @media (max-width: $bp-large) {
+            width: 100%;
+        }
+    }
+
+    .bambu-recipes-img {
+        margin-bottom: -140px;
+        width: 45%;
+
+        @media (max-width: $bp-large) {
+            width: 100%;
+            margin-bottom: -60px;
+            text-align: center;
+        }
+    }
+
+    .bambu-box {
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        p {
+            max-width: 55%;
+
+            @media (max-width: $bp-large) {
+                max-width: 100%;
+            }
+        }
+    }
+}

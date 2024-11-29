@@ -1,0 +1,915 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bambu</title>
+
+    <link rel="stylesheet" href="./css/main.min.css">
+</head>
+
+<body>
+    <div id="content">
+
+        <style>
+            @import"https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";
+
+            html {
+                overflow-x: hidden
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden
+            }
+
+            .bambu {
+                font-family: "Inter", sans-serif;
+                -webkit-box-shadow: 0px 20px 13px 5px rgba(0, 0, 0, .09);
+                box-shadow: 0px 20px 13px 5px rgba(0, 0, 0, .09)
+            }
+
+            .bambu p,
+            .bambu h2,
+            .bambu h3,
+            .bambu h4,
+            .bambu ul,
+            .bambu ol {
+                font-family: "Inter", sans-serif
+            }
+
+            .bambu figure {
+                margin: 0;
+                padding: 0
+            }
+
+            .bambu figure img {
+                max-width: 100%;
+                height: auto
+            }
+
+            .bambu .bambu-section-1,
+            .bambu .bambu-section-2 {
+                padding: 90px 10%;
+                position: relative
+            }
+
+            @media(max-width: 1100px) {
+
+                .bambu .bambu-section-1,
+                .bambu .bambu-section-2 {
+                    padding-left: 8%;
+                    padding-right: 8%
+                }
+            }
+
+            @media(max-width: 800px) {
+
+                .bambu .bambu-section-1,
+                .bambu .bambu-section-2 {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    padding-bottom: 30px
+                }
+            }
+
+            .bambu .bambu-section-1 {
+                background-color: #faf9f3
+            }
+
+            @media(max-width: 800px) {
+                .bambu .bambu-section-1 {
+                    padding-top: 125px
+                }
+            }
+
+            .bambu .bambu-section-1::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 8px;
+                background-color: #c29647;
+                background-image: url("https://boldgroup.agency/uploaded/bambu/bambu-line.png")
+            }
+
+            .bambu .bambu-section-2 {
+                background-color: #e7cf9f
+            }
+
+            @media(max-width: 800px) {
+                .bambu .bambu-section-2 {
+                    padding-top: 40px
+                }
+            }
+
+            .bambu .bambu-down {
+                width: 100px;
+                height: 50px;
+                background-color: #fff;
+                border-radius: 30px;
+                border: 2px solid #c29647;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                margin: -15px auto 20px auto;
+                position: relative;
+                z-index: 2
+            }
+
+            .bambu ul {
+                margin: 0 0 20px 0;
+                padding-left: 0;
+                list-style: none
+            }
+
+            .bambu ul li {
+                font-size: 24px;
+                padding-left: 35px;
+                position: relative;
+                margin-bottom: 10px
+            }
+
+            @media(max-width: 1400px) {
+                .bambu ul li {
+                    font-size: 20px
+                }
+            }
+
+            @media(max-width: 1100px) {
+                .bambu ul li {
+                    font-size: 18px
+                }
+            }
+
+            .bambu ul li::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                left: 0;
+                background-image: url(https://boldgroup.agency/uploaded/bambu/icon-cross.svg);
+                width: 18px;
+                height: 18px;
+                background-size: contain;
+                background-repeat: no-repeat
+            }
+
+            .bambu p {
+                font-size: 24px;
+                line-height: 1.2;
+                font-weight: 400;
+                margin-top: 0;
+                margin-bottom: 10px;
+                color: #000
+            }
+
+            @media(max-width: 1400px) {
+                .bambu p {
+                    font-size: 20px
+                }
+            }
+
+            @media(max-width: 1100px) {
+                .bambu p {
+                    font-size: 18px
+                }
+            }
+
+            @media(max-width: 800px) {
+                .bambu p {
+                    font-size: 16px
+                }
+            }
+
+            .bambu h2 {
+                font-size: 45px;
+                margin: 0;
+                padding-bottom: 20px;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                color: #7d2808;
+                font-weight: 700
+            }
+
+            @media(max-width: 1400px) {
+                .bambu h2 {
+                    font-size: 40px
+                }
+            }
+
+            @media(max-width: 1100px) {
+                .bambu h2 {
+                    font-size: 32px;
+                    letter-spacing: 3px
+                }
+            }
+
+            @media(max-width: 1100px) {
+                .bambu h2 {
+                    font-size: 24px
+                }
+            }
+
+            .bambu .bambu-box {
+                background-color: #fff;
+                padding: 30px;
+                border-radius: 30px;
+                margin: 1rem 0
+            }
+
+            .bambu .bambu-box h2,
+            .bambu .bambu-box strong {
+                color: #c29647
+            }
+
+            .bambu .bambu-box p {
+                margin-bottom: 0
+            }
+
+            .bambu .bambu-small-text {
+                font-size: 20px;
+                padding-left: 10px;
+                margin-left: 10px;
+                margin-bottom: 10px;
+                border-left: 2px solid #c29647
+            }
+
+            @media(max-width: 1400px) {
+                .bambu .bambu-small-text {
+                    font-size: 18px
+                }
+            }
+
+            @media(max-width: 1100px) {
+                .bambu .bambu-small-text {
+                    font-size: 16px
+                }
+            }
+
+            @media(max-width: 640px) {
+                .bambu .bambu-small-text {
+                    font-size: 14px
+                }
+            }
+
+            .bambu .bambu-color-second {
+                color: #7d2808
+            }
+
+            .bambu-hero img {
+                display: block;
+                width: 100%
+            }
+
+            .bambu-intro {
+                background-color: #c29647;
+                padding: 30px 30px 20px 30px;
+                position: relative;
+                z-index: 1;
+                border-radius: 30px
+            }
+
+            .bambu-intro .bambu-intro-header {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center
+            }
+
+            @media(max-width: 800px) {
+                .bambu-intro .bambu-intro-header {
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                    flex-direction: column
+                }
+            }
+
+            .bambu-intro .bambu-intro-header .bambu-intro-title,
+            .bambu-intro .bambu-intro-header .bambu-intro-img {
+                width: 50%
+            }
+
+            @media(max-width: 800px) {
+
+                .bambu-intro .bambu-intro-header .bambu-intro-title,
+                .bambu-intro .bambu-intro-header .bambu-intro-img {
+                    width: 100%
+                }
+            }
+
+            .bambu-intro .bambu-intro-header .bambu-intro-title {
+                padding-right: 20px;
+                padding-bottom: 0
+            }
+
+            @media(max-width: 800px) {
+                .bambu-intro .bambu-intro-header .bambu-intro-title {
+                    padding-right: 0;
+                    padding-bottom: 20px
+                }
+            }
+
+            @media(max-width: 800px) {
+                .bambu-intro .bambu-intro-header .bambu-intro-img {
+                    -webkit-box-ordinal-group: 0;
+                    -ms-flex-order: -1;
+                    order: -1
+                }
+            }
+
+            .bambu-intro .bambu-intro-header .bambu-intro-img img {
+                max-width: 115%;
+                width: 115%;
+                margin-top: -220px;
+                margin-left: -13%
+            }
+
+            @media(max-width: 800px) {
+                .bambu-intro .bambu-intro-header .bambu-intro-img img {
+                    width: 100%;
+                    max-width: 100%;
+                    margin: -150px 0 0 0
+                }
+            }
+
+            .bambu-intro p,
+            .bambu-intro h2 {
+                color: #fff
+            }
+
+            .bambu-coctail {
+                margin-top: 50px;
+                margin-bottom: 20px
+            }
+
+            .bambu-coctail .bambu-coctail-row {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: end;
+                -ms-flex-align: end;
+                align-items: flex-end
+            }
+
+            @media(max-width: 800px) {
+                .bambu-coctail .bambu-coctail-row {
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                    flex-direction: column
+                }
+            }
+
+            .bambu-coctail .bambu-coctail-row .bambu-coctail-text {
+                width: 70%
+            }
+
+            @media(max-width: 800px) {
+                .bambu-coctail .bambu-coctail-row .bambu-coctail-text {
+                    width: 100%
+                }
+            }
+
+            .bambu-coctail .bambu-coctail-row .bambu-coctail-text>* {
+                max-width: 500px;
+                padding-right: 20px
+            }
+
+            .bambu-coctail .bambu-coctail-row .bambu-coctail-img {
+                width: 30%;
+                padding-left: 50px;
+                padding-right: 30px
+            }
+
+            @media(max-width: 800px) {
+                .bambu-coctail .bambu-coctail-row .bambu-coctail-img {
+                    width: 100%;
+                    text-align: center;
+                    padding: 0
+                }
+            }
+
+            .bambu-coctail .bambu-coctail-row .bambu-coctail-img figure {
+                margin-bottom: -110px;
+                position: relative
+            }
+
+            @media(max-width: 800px) {
+                .bambu-coctail .bambu-coctail-row .bambu-coctail-img figure {
+                    margin-bottom: -30px;
+                    display: inline-block
+                }
+            }
+
+            .bambu-coctail .bambu-coctail-row .bambu-coctail-img figure::after {
+                content: "";
+                position: absolute;
+                bottom: -9px;
+                left: -83px;
+                width: 250px;
+                height: 50px;
+                background-image: url(https://boldgroup.agency/uploaded/bambu//shadow.png);
+                background-size: contain;
+                background-repeat: no-repeat
+            }
+
+            @media(max-width: 800px) {
+                .bambu-coctail .bambu-coctail-row .bambu-coctail-img figure::after {
+                    display: none
+                }
+            }
+
+            .bambu-coctail .bambu-coctail-row .bambu-coctail-img figure img {
+                position: relative;
+                z-index: 1
+            }
+
+            @media(max-width: 800px) {
+                .bambu-coctail .bambu-coctail-row .bambu-coctail-img figure img {
+                    max-width: 150px
+                }
+            }
+
+            @media(max-width: 640px) {
+                .bambu-coctail .bambu-coctail-row .bambu-coctail-img figure img {
+                    max-width: 110px
+                }
+            }
+
+            .bambu-coctail .bambu-box p {
+                max-width: 60%
+            }
+
+            @media(max-width: 800px) {
+                .bambu-coctail .bambu-box p {
+                    max-width: 100%
+                }
+            }
+
+            .bambu-recipes .bambu-recipes-row {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: end;
+                -ms-flex-align: end;
+                align-items: flex-end;
+                margin-top: 40px
+            }
+
+            @media(max-width: 1100px) {
+                .bambu-recipes .bambu-recipes-row {
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                    flex-direction: column
+                }
+            }
+
+            .bambu-recipes .bambu-recipes-text {
+                width: 55%
+            }
+
+            @media(max-width: 1100px) {
+                .bambu-recipes .bambu-recipes-text {
+                    width: 100%
+                }
+            }
+
+            .bambu-recipes .bambu-recipes-img {
+                margin-bottom: -140px;
+                width: 45%
+            }
+
+            @media(max-width: 1100px) {
+                .bambu-recipes .bambu-recipes-img {
+                    width: 100%;
+                    margin-bottom: -60px;
+                    text-align: center
+                }
+            }
+
+            .bambu-recipes .bambu-box {
+                padding-top: 40px;
+                padding-bottom: 40px
+            }
+
+            .bambu-recipes .bambu-box p {
+                max-width: 55%
+            }
+
+            @media(max-width: 1100px) {
+                .bambu-recipes .bambu-box p {
+                    max-width: 100%
+                }
+            }
+
+            .bambu-banner {
+                background-color: #7d2808;
+                padding: 40px;
+                text-align: center
+            }
+
+            .bambu-banner h2 {
+                color: #fff;
+                padding-bottom: 0;
+                font-weight: 100
+            }
+
+            .bambu-side-img {
+                position: absolute;
+                z-index: -1
+            }
+
+            @media(max-width: 1400px) {
+                .bambu-side-img {
+                    display: none
+                }
+            }
+
+            .bambu-side-img-1 {
+                left: -180px;
+                top: -140px
+            }
+
+            .bambu-side-img-2 {
+                right: -180px;
+                top: 400px
+            }
+
+            .bambu-side-img-3 {
+                left: -190px;
+                bottom: 950px
+            }
+
+            .bambu-side-img-4 {
+                right: -170px;
+                bottom: 800px
+            }
+
+            .bambu-side-img-5 {
+                right: -170px;
+                bottom: 450px
+            }
+
+            .bambu-side-img-6 {
+                left: -120px;
+                top: 100px;
+                z-index: 1
+            }
+
+            .bambu-side-img-7 {
+                z-index: 1;
+                top: -50px;
+                right: calc(-49.5vw + 50%)
+            }
+
+            @media(max-width: 1800px) {
+                .bambu-side-img-7 {
+                    width: 40vw
+                }
+            }
+
+            .bambu-side-img-8 {
+                z-index: 1;
+                right: -100px;
+                top: 600px
+            }
+
+            .bambu-side-img-9 {
+                left: -140px;
+                top: 750px
+            }
+
+            .bambu-side-img-10 {
+                right: -150px;
+                top: 950px
+            }
+
+            .bambu-side-img-11 {
+                right: -120px;
+                bottom: 600px
+            }
+
+            .bambu-side-img-12 {
+                left: -140px;
+                bottom: 350px
+            }
+        </style>
+        <div class="bambu">
+
+            <!--Hero-->
+            <div class="bambu-hero">
+                <figure>
+                    <img src="https://boldgroup.agency/uploaded/bambu/bambu-hero.jpg" alt="Recepti Bambu Cream">
+                </figure>
+            </div>
+
+            <!--FIRST SECTION-->
+            <section class="bambu-section-1">
+                <img class="bambu-side-img bambu-side-img-1"
+                    src="https://boldgroup.agency/uploaded/bambu/side-imgs/leaf-1.png" alt="leaf">
+                <img class="bambu-side-img bambu-side-img-2"
+                    src="https://boldgroup.agency/uploaded/bambu/side-imgs/leaf-2.png" alt="leaf">
+                <img class="bambu-side-img bambu-side-img-3"
+                    src="https://boldgroup.agency/uploaded/bambu/side-imgs/leaf-3.png" alt="leaf">
+                <img class="bambu-side-img bambu-side-img-4"
+                    src="https://boldgroup.agency/uploaded/bambu/side-imgs/leaf-4.png" alt="leaf">
+                <img class="bambu-side-img bambu-side-img-5"
+                    src="https://boldgroup.agency/uploaded/bambu/side-imgs/leaf-5.png" alt="leaf">
+
+                <!--Header-->
+                <div class="bambu-intro">
+                    <div class="bambu-intro-header">
+                        <h2 class="bambu-intro-title">Odkrijte KREMAST okus Bumbu Cream</h2>
+                        <figure class="bambu-intro-img">
+                            <img src="https://boldgroup.agency/uploaded/bambu/bambu-bottels.png" alt="Bambu bottels">
+                        </figure>
+                    </div>
+                    <div class="bambu-intro-text">
+                        <p>Bumbu Cream je razkošna mešanica priznane blagovne znamke, izbranih začimb in žametne prave
+                            mlečne smetane. Z notami čaja, kokosa in cimeta je popolno ravnotežje bogastva in
+                            lahkotnosti,
+                            primerno za vsakršno uživanje. Ne glede na to, ali želite popestriti koktajl ali dodati
+                            dekadentno noto sladicam, Bumbu Cream s svojo gladko, kompleksno aromo navdušuje čute.</p>
+                    </div>
+                </div>
+
+                <div class="bambu-down">
+                    <svg width="29" height="27" viewBox="0 0 29 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.6875 20.3245L12.6875 -6.56733e-07L16.3125 -5.10792e-07L16.3125 20.3245L26.4625 10.9761L29 13.3549L14.5 26.7099L1.27353e-06 13.3549L2.5375 10.9761L12.6875 20.3245Z"
+                            fill="#C29647" />
+                    </svg>
+
+                </div>
+
+                <!--Boxe-->
+                <div class="bambu-box">
+                    <h2>Srkajte in mešajte</h2>
+                    <p>Prepustite se kremastim, gladkim koktajlom, ki poudarijo edinstveno mešanico začimb in sladkobe
+                        Bumbu Cream. Popoln je ohlajen ali zmešan v vaše najljubše pijače.</p>
+                </div>
+
+                <!--Coctail 1-->
+                <div class="bambu-coctail">
+
+                    <div class="bambu-coctail-row">
+                        <div class="bambu-coctail-text">
+                            <h2>Bumbu CREAM <br>
+                                shot</h2>
+                            <ul>
+                                <li>30 ml Bumbu Cream</li>
+                            </ul>
+                        </div>
+                        <div class="bambu-coctail-img">
+                            <figure>
+                                <img src="https://boldgroup.agency/uploaded/bambu/bambu-shot.png" alt="bambu shot">
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="bambu-box">
+                        <p><strong> Nasvet: </strong>Postrezite Bumbu Cream dobro ohlajenega v kozarcu za šilce. Za
+                            dodaten pridih ga okrasite s ščepcem cimeta.</p>
+                    </div>
+                </div>
+
+                <!--Coctail 2 -->
+                <div class="bambu-coctail">
+
+                    <div class="bambu-coctail-row">
+                        <div class="bambu-coctail-text">
+                            <h2>Bumbu Cream <br> Coffee</h2>
+                            <ul>
+                                <li>30 ml Bumbu Cream</li>
+                                <li>espresso kava</li>
+                                <li>smetana</li>
+                            </ul>
+                            <p class="bambu-small-text">
+                                Najprej čez sveže pripravljeno kavo nalijemo Bumbu Cream nato zaključimo s sladko
+                                smetano.
+                            </p>
+                        </div>
+                        <div class="bambu-coctail-img">
+                            <figure>
+                                <img src="https://boldgroup.agency/uploaded/bambu/bambu-cream.png"
+                                    alt="bambu cream coffee">
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="bambu-box">
+                        <p><strong> Nasvet: </strong>Na vrh dodajte ščepec muškatnega oreščka ali čokoladnih ostružkov
+                            za prijeten, aromatičen zaključek.</p>
+                    </div>
+                </div>
+
+                <!--Coctail 3 -->
+                <div class="bambu-coctail">
+
+                    <div class="bambu-coctail-row">
+                        <div class="bambu-coctail-text">
+                            <h2>Bumbu Espresso <br> Martini</h2>
+                            <ul>
+                                <li>50 ml Bumbu Original</li>
+                                <li>15 ml Bumbu Cream</li>
+                                <li>30 ml kavnega likerja</li>
+                                <li>kavna zrna</li>
+                            </ul>
+                            <p class="bambu-small-text">
+                                V shaker z ledom vlijemo sestavine, dobro pretresemo in prelijemo v kozarec.
+                            </p>
+                        </div>
+                        <div class="bambu-coctail-img">
+                            <figure>
+                                <img src="https://boldgroup.agency/uploaded/bambu/bambu-martini.png"
+                                    alt="bambu martini">
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="bambu-box">
+                        <p><strong> Nasvet: </strong>Okrasite s celimi kavnimi zrni na peni, ki poudarijo aromo in
+                            dodajo eleganten pridih.</p>
+                    </div>
+                </div>
+
+                <!--Coctail 4 -->
+                <div class="bambu-coctail">
+
+                    <div class="bambu-coctail-row">
+                        <div class="bambu-coctail-text">
+                            <h2>Bumbu Cream <br>Energizer</h2>
+                            <ul>
+                                <li>30 ml Bumbu Cream</li>
+                                <li>smetana</li>
+                                <li>ledene kocke</li>
+                            </ul>
+                            <p class="bambu-small-text">
+                                Čez led prelijemo kavo in Bumbu Cream, dobro premešamo ter zaključimo s sladko smetano.
+                            </p>
+                        </div>
+                        <div class="bambu-coctail-img">
+                            <figure>
+                                <img src="https://boldgroup.agency/uploaded/bambu/bambu-energy.png" alt="bambu energi">
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="bambu-box">
+                        <p><strong> Nasvet: </strong>Pretresite in nalijte v kozarec ter uživajte kar tako ali dodajte
+                            cimetovo palčko za blag pridih začimb.</p>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!--SECOND SECTION-->
+            <section class="bambu-section-2">
+                <img class="bambu-side-img bambu-side-img-6"
+                    src="https://boldgroup.agency/uploaded/bambu/side-imgs/choco.png" alt="leaf">
+                <img class="bambu-side-img bambu-side-img-7"
+                    src="https://boldgroup.agency/uploaded/bambu/side-imgs/spoon.png" alt="leaf">
+                <img class="bambu-side-img bambu-side-img-8"
+                    src="https://boldgroup.agency/uploaded/bambu/side-imgs/caramel-1.png" alt="leaf">
+                <img class="bambu-side-img bambu-side-img-9"
+                    src="https://boldgroup.agency/uploaded/bambu/side-imgs/leaf-6.png" alt="leaf">
+                <img class="bambu-side-img bambu-side-img-10"
+                    src="https://boldgroup.agency/uploaded/bambu/side-imgs/choco-2.png" alt="leaf">
+                <img class="bambu-side-img bambu-side-img-11"
+                    src="https://boldgroup.agency/uploaded/bambu/side-imgs/caramel-2.png" alt="leaf">
+                <img class="bambu-side-img bambu-side-img-12"
+                    src="https://boldgroup.agency/uploaded/bambu/side-imgs/caramel-3.png" alt="leaf">
+
+                <div class="bambu-recipes">
+
+                    <div class="bambu-recipes-text">
+                        <h2>Okušajte in uživajte</h2>
+                        <p class="bambu-color-second">Izboljšajte svoje sladice z okusom Bumbu Cream, ki vašim sladicam,
+                            pecivu in drugim dobrotam
+                            doda bogato noto.</p>
+                    </div>
+
+                    <div class="bambu-recipes-row">
+                        <div class="bambu-recipes-text">
+                            <h2>Bumbu Cream TIRAMISU</h2>
+                            <ul>
+                                <li>200 g sveže močne črne kave</li>
+                                <li>6 žlic Bumbu Cream</li>
+                                <li>500 ml sladke smetane za stepanje</li>
+                                <li>250 g maskarponeja</li>
+                                <li>3 žlice sladkorja</li>
+                                <li>1 žlička vanilijeve arome</li>
+                                <li>200 g piškotov (lady fingers, bebe, savoiardi)</li>
+                                <li>2.5 žlici nesladkanega kakava v prahu</li>
+                            </ul>
+
+                            <p class="bambu-small-text">
+                                V plitvo skledo z ravnim dnom vlijemo kavo in jo zmešamo z Bumbu Cream. Sladko smetano
+                                stepamo, dokler se ne začnejo tvoriti rahli vrhovi, nato jo z ročno metlico nežno
+                                vmešamo v maskarpone, pomešan z Bumbu Cream, vanilijevim izvlečkom in sladkorjem.
+                            </p>
+
+                            <p class="bambu-small-text">
+                                Piškote na hitro pomakamo v kavo in jih polagamo v pravokotno stekleno posodo, da
+                                prekrijemo dno. Premažemo jih s polovico kreme, poravnamo in nanesemo še eno plast kavi
+                                namočenih piškotov. Preostanek kreme v kupčkih nabrizgamo na piškote. Po vrhu posujemo
+                                kakav. Posodo pokrijemo in shranimo v hladilnik za vsaj 3 ure, da se tiramisu dobro
+                                ohladi.
+                            </p>
+
+                        </div>
+                        <div class="bambu-recipes-img">
+                            <figure>
+                                <img src="https://boldgroup.agency/uploaded/bambu/bambu-dish.png" alt="tiramisu">
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="bambu-box">
+                        <p><strong> Nasvet: </strong>Na vrh dodajte ščepec muškatnega oreščka ali čokoladnih ostružkov
+                            za prijeten, aromatičen zaključek.</p>
+                    </div>
+
+                    <div class="bambu-recipes-row">
+                        <div class="bambu-recipes-text">
+                            <h2>Bumbu MOUSSE Z BELO ČOKOLADO</h2>
+                            <ul>
+                                <li>100 g bele čokolade</li>
+                                <li>125 g Bumbu Cream</li>
+                                <li>1 žlička vanilijeve arome</li>
+                                <li>2 lističa želatine</li>
+                                <li>250 g dobro ohlajene smetane za stepanje</li>
+                            </ul>
+
+                            <p class="bambu-small-text">
+                                Liste želatine namočimo v hladno vodo in pustimo, da se zmehčajo.
+                            </p>
+
+                            <p class="bambu-small-text">
+                                Čokolado nasekljamo in jo stopimo nad vodno kopeljo. Dodamo Bumbu Cream, vanilijevo
+                                aromo in ožete liste želatine ter mešamo, da se želatina raztopi. Zmes ohladimo na sobno
+                                temperaturo.
+                            </p>
+
+                            <p class="bambu-small-text">
+                                Sladko smetano na pol stepemo. Vmešamo nekaj žlic smetane v čokoladno zmes za
+                                temperiranje, nato nežno primešamo preostanek smetane.
+                            </p>
+
+                            <p class="bambu-small-text">
+                                Kremo naložimo v kozarčke z žlico ali z vrečko za dekoriranje. Hladimo vsaj 3 ure
+                                (najbolje čez noč), da se strdi. Pred postrežbo po želji okrasimo.
+                            </p>
+
+                        </div>
+                        <div class="bambu-recipes-img">
+                            <figure>
+                                <img src="https://boldgroup.agency/uploaded/bambu/bambu-mousse-2.png" alt="mousse">
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="bambu-box">
+                        <p><strong> Nasvet: </strong>Za lep videz posujte sladico z naribano čokolado ali kakavom.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <div class="bambu-banner">
+                <h2>MINISTER ZA ZDRAVJE OPOZARJA:
+                    “PREKOMERNO PITJE ALKOHOLA ŠKODUJE ZDRAVJU!”</h2>
+            </div>
+
+        </div>
+
+    </div>
+
+    <style>
+        /* this delet after */
+        #content {
+            max-width: 1280px;
+            min-width: 320px;
+            margin: 0 auto;
+        }
+    </style>
+</body>
+
+</html>
